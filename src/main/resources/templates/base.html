@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration - EduTrack</title>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" th:href="@{/Register.css}" />
+  <link rel="stylesheet" th:href="@{/style.css}" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Navbar Start -->
+  <header class="navbar bg-light py-2 px-3 mb-4 shadow-sm">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <div class="logo fw-bold fs-4 text-primary">
+        <i class="fa fa-graduation-cap me-2"></i> EduTrack
+      </div>
+      <nav>
+        <a href="/" class="me-3 text-decoration-none text-dark"><i class="fa fa-home"></i> Home</a>
+        <a href="/home" class="me-3 text-decoration-none text-dark"><i class="fa-solid fa-book-open-reader"></i> Courses</a>
+        <a href="/resell" class="me-3 text-decoration-none text-dark">Gamified Zone</a>
+        <a href="/event" class="me-3 text-decoration-none text-dark">Progress</a>
+        <a href="/splicot" class="me-3 text-decoration-none text-dark">Goals</a>
+        <a href="/event" class="me-3 text-decoration-none text-dark">Community</a>
+        <a href="/splicot" class="me-3 text-decoration-none text-dark">Careers</a>
+        <a href="/event" class="me-3 text-decoration-none text-dark">AI Assistant</a>
+        <a href="/splicot" class="me-3 text-decoration-none text-dark">Planner</a>
+        <a href="/splicot" class="text-decoration-none text-dark">Resources</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Navbar End -->
+
+  <!-- Registration Form Section -->
+  <section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg-10">
+          <div class="card card-registration">
+            <div class="row g-0">
+
+              <!-- Left Side Image -->
+              <div class="col-md-6 d-none d-md-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                     alt="Sample photo" class="img-fluid h-100"
+                     style="object-fit: cover; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+
+              <!-- Right Side Form -->
+              <div class="col-md-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Student Registration</h3>
+
+                  <form th:action="@{/register}" method="post">
+                    <div class="form-outline mb-4">
+                      <input type="text" name="name" id="name" class="form-control form-control-lg" required />
+                      <label class="form-label" for="name">Enter Your Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="email" name="email" id="email" class="form-control form-control-lg" required />
+                      <label class="form-label" for="email">Email ID</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" name="address" id="address" class="form-control form-control-lg" required />
+                      <label class="form-label" for="address">Address</label>
+                    </div>
+
+                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                      <h6 class="mb-0 me-4">Gender:</h6>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female" required />
+                        <label class="form-check-label" for="female">Female</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" />
+                        <label class="form-check-label" for="male">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="other" value="Other" />
+                        <label class="form-check-label" for="other">Other</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <select name="state" class="form-select form-select-lg" required>
+                          <option selected disabled>State</option>
+                          <option value="State 1">State 1</option>
+                          <option value="State 2">State 2</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <select name="city" class="form-select form-select-lg" required>
+                          <option selected disabled>City</option>
+                          <option value="City 1">City 1</option>
+                          <option value="City 2">City 2</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="date" name="dob" id="dob" class="form-control form-control-lg" required />
+                      <label class="form-label" for="dob">Date of Birth</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" name="pincode" id="pincode" class="form-control form-control-lg" required />
+                      <label class="form-label" for="pincode">Pincode</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" name="course" id="course" class="form-control form-control-lg" required />
+                      <label class="form-label" for="course">Course</label>
+                    </div>
+
+                    <div class="d-flex justify-content-end pt-3">
+                      <button type="reset" class="btn btn-light btn-lg">Reset</button>
+                      <button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+              <!-- End of Form Section -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

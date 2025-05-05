@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+body {
+      background-color: #f8f9fa;
+    }
+    .course-card {
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+    .course-icon {
+      font-size: 40px;
+      color: #3cd07b;
+    }
+    .btn-readmore {
+      background-color: #3cd07b;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-readmore:hover {
+      background-color: #32b36a;
+    }
+    
+   .course-icon img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    nav {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .auth-buttons {
+      margin-left: auto;
+    }
+    nav .btn.outline {
+      border: 1px solid #333;
+      padding: 5px 15px;
+      margin-right: 8px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+    nav .btn.fill {
+      background-color: #333;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+    } 
