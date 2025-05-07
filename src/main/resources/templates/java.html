@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Course - EduTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      overflow-x: hidden;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .sidebar h4 {
+      color: #ffcc00;
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      color: #ffcc00;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 40px;
+    }
+    .course-image {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .btn-custom {
+      background-color: #003366;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #ffcc00;
+      color: #003366;
+    }
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h4 class="mb-4">Java Course</h4>
+    <a href="#java-intro">1. Java Introduction</a>
+    <a href="#java-env">2. Setup Java Environment</a>
+    <a href="#program-structure">3. Java Program Structure</a>
+    <a href="#data-types">4. Data Types & Variables</a>
+    <a href="#operators">5. Operators</a>
+    <a href="#control-flow">6. Control Statements</a>
+    <a href="#io">7. Input & Output</a>
+    <a href="#arrays">8. Arrays</a>
+    <a href="#strings">9. Strings</a>
+    <a href="#methods">10. Methods</a>
+    <a href="#oops">11. OOP Concepts</a>
+    <a href="#access-modifiers">12. Access Modifiers</a>
+    <a href="#packages">13. Packages</a>
+    <a href="#exceptions">14. Exception Handling</a>
+    <a href="#practice">15. Practice Programs</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Java Introduction -->
+    <div id="java-intro" class="content-section active">
+      <h2 class="fw-bold mb-4">Java Introduction</h2>
+      <img src="/images/java_intro.png" alt="Java Overview" class="course-image">
+
+      <p><strong>Java</strong> is a powerful, versatile, and platform-independent programming language developed by <strong>Sun Microsystems</strong> in 1995 (later acquired by Oracle). It is used to build desktop, web, mobile, and enterprise applications. The core philosophy of Java is: <strong>“Write Once, Run Anywhere (WORA)”</strong>.</p>
+
+      <h5>🛠 Key Features of Java:</h5>
+      <ul>
+        <li><strong>Object-Oriented:</strong> Java is based on the concepts of objects and classes.</li>
+        <li><strong>Platform-Independent:</strong> Java code runs on the JVM, making it OS-independent.</li>
+        <li><strong>Simple & Secure:</strong> Syntax is easy to learn, and Java has built-in security features.</li>
+        <li><strong>Multithreaded:</strong> Java supports concurrent programming through threads.</li>
+        <li><strong>Robust:</strong> Strong memory management and exception handling make it reliable.</li>
+        <li><strong>Portable:</strong> Java programs can run anywhere with a JVM installed.</li>
+      </ul>
+
+      <h5>🌍 How Java Works:</h5>
+      <ol>
+        <li>You write Java code in a file with `.java` extension.</li>
+        <li>The Java compiler (`javac`) converts it into <strong>bytecode</strong>.</li>
+        <li>The bytecode is executed by the <strong>Java Virtual Machine (JVM)</strong>.</li>
+      </ol>
+
+      <pre><code>// Sample Java Program
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, Java!");
+  }
+}
+      </code></pre>
+
+      <h5>📦 Java Editions:</h5>
+      <ul>
+        <li><strong>JSE (Standard Edition):</strong> Core features of Java.</li>
+        <li><strong>JEE (Enterprise Edition):</strong> Web & enterprise applications (Servlets, JSP).</li>
+        <li><strong>JME (Micro Edition):</strong> Used for mobile and embedded systems.</li>
+      </ul>
+
+      <h5>🧠 Why Learn Java?</h5>
+      <ul>
+        <li>Most in-demand programming language</li>
+        <li>Strong community and job support</li>
+        <li>Used in enterprise, Android, and server-side development</li>
+        <li>Good for understanding OOP principles</li>
+      </ul>
+
+      <h5>📸 Visual: Java Workflow</h5>
+      <img src="/images/java_workflow.png" alt="Java Workflow" class="course-image">
+
+      <p>Overall, Java is an ideal choice for anyone starting their journey into programming or backend development. As we proceed, we’ll dive deeper into setting up your environment and writing Java code efficiently.</p>
+    </div>
+
+    <!-- Additional sections like Setup Java Environment can go here -->
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

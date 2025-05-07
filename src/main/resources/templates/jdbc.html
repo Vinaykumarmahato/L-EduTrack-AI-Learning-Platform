@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JDBC Introduction - EduTrack</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    .sidebar {
+      width: 270px;
+      background-color: #1e293b;
+      color: white;
+      overflow-y: auto;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #475569;
+      padding-bottom: 10px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+
+    .sidebar ul li a {
+      color: #cbd5e1;
+      text-decoration: none;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #334155;
+      color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #334155;
+      margin-top: 25px;
+      font-size: 24px;
+    }
+
+    p, li {
+      color: #374151;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    ul, ol {
+      margin: 15px 0 15px 20px;
+    }
+
+    code {
+      background-color: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .next-topic {
+      margin-top: 40px;
+    }
+
+    .next-topic a {
+      display: inline-block;
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .next-topic a:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* Make sidebar scrollable on smaller screens */
+    @media (max-height: 700px) {
+      .sidebar {
+        overflow-y: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>JDBC Topics</h2>
+    <ul>
+      <li><a href="#">Introduction</a></li>
+      <li><a href="#">JDBC Architecture</a></li>
+      <li><a href="#">JDBC Drivers</a></li>
+      <li><a href="#">Steps to Connect JDBC</a></li>
+      <li><a href="#">Connection Interface</a></li>
+      <li><a href="#">Statement Interface</a></li>
+      <li><a href="#">PreparedStatement</a></li>
+      <li><a href="#">ResultSet Interface</a></li>
+      <li><a href="#">CallableStatement</a></li>
+      <li><a href="#">Batch Processing</a></li>
+      <li><a href="#">Transaction Management</a></li>
+      <li><a href="#">JDBC with MySQL</a></li>
+      <li><a href="#">JDBC Example</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h1>Introduction to JDBC</h1>
+    <p>
+      JDBC (Java Database Connectivity) is a standard Java API that enables Java applications to connect and interact with databases. It provides methods for querying and updating data in a database using SQL. JDBC is widely used for database operations in Java applications, including web and desktop apps.
+    </p>
+
+    <h2>What is JDBC?</h2>
+    <p>
+      JDBC is an interface between Java applications and databases. It allows developers to perform basic database operations like creating, reading, updating, and deleting records (CRUD) using SQL queries from within a Java program.
+    </p>
+
+    <h2>Why Use JDBC?</h2>
+    <ul>
+      <li>Database independence: Use any database with just a different driver.</li>
+      <li>Supports all SQL operations (DDL, DML, DCL).</li>
+      <li>Can execute stored procedures and manage transactions.</li>
+      <li>Lightweight and included with Java SE.</li>
+    </ul>
+
+    <h2>Key Components of JDBC</h2>
+    <ol>
+      <li><strong>DriverManager:</strong> Loads JDBC drivers and manages database connections.</li>
+      <li><strong>Connection:</strong> Represents a session with the database.</li>
+      <li><strong>Statement:</strong> Executes SQL queries.</li>
+      <li><strong>ResultSet:</strong> Holds results retrieved from the database.</li>
+    </ol>
+
+    <h2>Basic JDBC Workflow</h2>
+    <p>
+      The steps to use JDBC in an application:
+    </p>
+    <ol>
+      <li>Load the database driver class.</li>
+      <li>Establish a connection using <code>DriverManager.getConnection()</code>.</li>
+      <li>Create a <code>Statement</code> or <code>PreparedStatement</code>.</li>
+      <li>Execute SQL commands like <code>executeQuery()</code> or <code>executeUpdate()</code>.</li>
+      <li>Process the <code>ResultSet</code> if needed.</li>
+      <li>Close the connection to free resources.</li>
+    </ol>
+
+    <h2>Example</h2>
+    <pre><code>
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/mydb", "user", "password");
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+while(rs.next()) {
+    System.out.println(rs.getString("username"));
+}
+con.close();
+    </code></pre>
+
+    <h2>Advantages</h2>
+    <ul>
+      <li>Direct control over SQL execution.</li>
+      <li>Supports all major relational databases.</li>
+      <li>Good for small to mid-level database applications.</li>
+    </ul>
+
+    <h2>Limitations</h2>
+    <ul>
+      <li>Verbose code with lots of boilerplate.</li>
+      <li>No automatic object-relational mapping.</li>
+      <li>Error-prone if connection/resources are not managed properly.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+      JDBC provides the foundation for interacting with databases in Java. Whether you're developing a simple student record system or a complex enterprise platform, JDBC knowledge is essential to understanding Java's backend data handling capabilities.
+    </p>
+
+    <div class="next-topic">
+      <a href="jdbc_architecture.html">👉 Next: JDBC Architecture</a>
+    </div>
+  </main>
+</body>
+</html>

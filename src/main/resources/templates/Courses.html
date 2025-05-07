@@ -95,6 +95,10 @@
         <li class="nav-item"><a class="nav-link" href="/splicot">Goals</a></li>
         <li class="nav-item"><a class="nav-link" href="/event">Community</a></li>
         <li class="nav-item"><a class="nav-link" href="/splicot">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="/event">AI Assistant</a></li>
+        <li class="nav-item"><a class="nav-link" href="/splicot">Planner</a></li>
+         <li class="nav-item"><a class="nav-link" href="/event">Resources</a></li>
+    <!--     <li class="nav-item"><a class="nav-link" href="/splicot"></a></li> -->
       </ul>
       <div class="d-flex auth-buttons">
         <a href="/login" class="btn btn-outline-light rounded-pill px-3 me-2">Login</a>
@@ -115,12 +119,27 @@
       <div class="col-md-6 col-lg-4">
         <div class="card course-card p-4">
           <div class="card-body text-center">
-            <div class="course-icon mb-3">
-              <img src="/images/html-css.png" alt="HTML CSS">
+            <div class="course-icon mb-6">
+              <img src="/image/html_img.jpg" alt="HTML CSS">
             </div>
-            <h5 class="card-title fw-bold">HTML & CSS</h5>
+            <h5 class="card-title fw-bold">HTML </h5>
             <p class="card-text text-muted">Build beautiful and responsive webpages using semantic HTML and modern CSS.</p>
-           <a th:href="@{/image/html_img.jpg}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+           <a th:href="@{/courses/html}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+       <div class="row g-4">
+      <!-- Course: HTML & CSS -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-6">
+              <img src="/image/html_img.jpg" alt="HTML CSS">
+            </div>
+            <h5 class="card-title fw-bold"> CSS</h5>
+            <p class="card-text text-muted">Build beautiful and responsive webpages using semantic HTML and modern CSS.</p>
+           <a th:href="@{/courses/html}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
           </div>
         </div>
       </div>
@@ -134,26 +153,13 @@
             </div>
             <h5 class="card-title fw-bold">Java (Core & Advanced)</h5>
             <p class="card-text text-muted">Master object-oriented programming, collections, multithreading, and Java 8+ features.</p>
-            <a href="#" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+            <a th:href="@{/courses/java}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+
           </div>
         </div>
       </div>
-
-      <!-- Course: Spring Boot -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card course-card p-4">
-          <div class="card-body text-center">
-            <div class="course-icon mb-3">
-              <img src="/images/springboot.png" alt="Spring Boot">
-            </div>
-            <h5 class="card-title fw-bold">Spring Boot & Hibernate</h5>
-            <p class="card-text text-muted">Build enterprise-level apps with Spring Boot, JPA, and Hibernate ORM.</p>
-            <a href="#" class="btn btn-readmore rounded-pill px-4">Read More →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Course: MySQL -->
+      
+       <!-- Course: MySQL -->
       <div class="col-md-6 col-lg-4">
         <div class="card course-card p-4">
           <div class="card-body text-center">
@@ -161,6 +167,78 @@
               <img src="/images/mysql.png" alt="MySQL">
             </div>
             <h5 class="card-title fw-bold">MySQL & PostgreSQL</h5>
+            <p class="card-text text-muted">Design and manage relational databases with real-world queries and schema design.</p>
+            <a th:href="@{/courses/mysql}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+       <!-- Course: MySQL -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/mysql.png" alt="JDBC">
+            </div>
+            <h5 class="card-title fw-bold">JDBC</h5>
+            <p class="card-text text-muted">Design and manage relational databases with real-world queries and schema design.</p>
+            <a th:href="@{/course/jdbc}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <!-- Course: Spring Boot -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/spring.png" alt="Spring">
+            </div>
+            <h5 class="card-title fw-bold">Spring</h5>
+            <p class="card-text text-muted">Build enterprise-level apps with Spring </p>
+            <a href="@{/courses/spring}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+      
+       <!-- Course: Spring Boot -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/springboot.png" alt="Spring Boot">
+            </div>
+            <h5 class="card-title fw-bold">Spring Boot</h5>
+            <p class="card-text text-muted">Build enterprise-level apps JPA, and Hibernate ORM.</p>
+            <a href="@{/courses/springboot}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+ <!-- Course: Spring Boot -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/hibernate.png" alt="Hibernate">
+            </div>
+            <h5 class="card-title fw-bold">Hibernate</h5>
+            <p class="card-text text-muted">Build enterprise-level apps  JPA with Hibernate ORM.</p>
+            <a href="@{/courses/hibernate}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Course: MySQL -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/mysql.png" alt="PostgreSQL">
+            </div>
+            <h5 class="card-title fw-bold"> PostgreSQL</h5>
             <p class="card-text text-muted">Design and manage relational databases with real-world queries and schema design.</p>
             <a href="#" class="btn btn-readmore rounded-pill px-4">Read More →</a>
           </div>
@@ -194,6 +272,22 @@
           </div>
         </div>
       </div>
+
+<!-- Course: Git & GitHub -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card course-card p-4">
+          <div class="card-body text-center">
+            <div class="course-icon mb-3">
+              <img src="/images/github.png" alt="GitBase">
+            </div>
+            <h5 class="card-title fw-bold">GitBase</h5>
+            <p class="card-text text-muted">Master version control, branching, collaboration, and open-source contributions.</p>
+            <a th:href="@{/courses/command}" class="btn btn-readmore rounded-pill px-4">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
       <!-- Course: Git & GitHub -->
       <div class="col-md-6 col-lg-4">

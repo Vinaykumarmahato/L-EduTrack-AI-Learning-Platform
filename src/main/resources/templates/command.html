@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPG Coder | Git Commands Guide</title>
+  <link rel="icon" type="image/png" href="tpg.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 20px;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #343a40;
+      padding-top: 20px;
+      color: white;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+      width: 80%;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    .command-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .command {
+      flex-grow: 1;
+      text-align: left;
+      background: #2d2d2d;
+      color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #2980b9;
+    }
+
+    p {
+      text-align: left;
+      color: #555;
+    }
+
+    .footer-newsletter button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      background-color: #dc3545;
+      color: #fff;
+      transition: background 0.3s ease;
+      border: none;
+    }
+
+    .footer-newsletter button:hover {
+      background-color: #b31217;
+    }
+
+    .footer-newsletter a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #aaa;
+      border-top: 1px solid #333;
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        position: relative;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
+  <script>
+    function copyCommand(id) {
+      var commandText = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(commandText);
+      alert("Copied: " + commandText);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h3>Git Commands</h3>
+    <a href="#command1">Initialize a Git Repository</a>
+    <a href="#command2">Configure Git User</a>
+    <a href="#command3">Check Git Configuration</a>
+    <a href="#command4">Add Files to Staging</a>
+    <a href="#command5">Commit Changes</a>
+    <a href="#command6">Add Remote Repository</a>
+    <a href="#command7">Check Remote Repositories</a>
+    <a href="#command8">Check Git Status</a>
+    <a href="#command9">View Commit History</a>
+    <a href="#command10">Push Changes to Remote</a>
+    <a href="#command11">Pull Latest Changes</a>
+    <a href="#command12">Clone a Repository</a>
+    <a href="#command13">Create a New Branch</a>
+    <a href="#command14">Switch to Another Branch</a>
+    <a href="#command15">Merge a Branch</a>
+  </div>
+
+  <div class="content">
+    <h1>Git Commands Guide</h1>
+    <p>A comprehensive guide to Git commands with detailed explanations.</p>
+
+    <!-- Command 1: Initialize a Git Repository -->
+    <div id="command1">
+      <h2>1. Initialize a Git Repository</h2>
+      <p>This command initializes an empty Git repository in the current directory.</p>
+      <p>Once you run this command, the directory becomes a Git repository and a .git folder is created. This folder contains all the version control data.</p>
+      <div class="command-container">
+        <pre class="command" id="cmd1">git init</pre>
+        <button class="copy-btn" onclick="copyCommand('cmd1')">Copy</button>
+      </div>
+    </div>
+
+    <!-- Command 2: Configure Git User -->
+    <div id="command2">
+      <h2>2. Configure Git User</h2>
+      <p>Set up your Git username and email address globally. This information will be used in your commit history.</p>
+      <div class="command-container">
+        <pre class="command" id="cmd2">git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</pre>
+        <button class="copy-btn" onclick="copyCommand('cmd2')">Copy</button>
+      </div>
+    </div>
+
+    <!-- Command 3: Check Git Configuration -->
+    <div id="command3">
+      <h2>3. Check Git Configuration</h2>
+      <p>This command displays the current Git configuration settings, such as user name, email, and other preferences.</p>
+      <div class="command-container">
+        <pre class="command" id="cmd3">git config --list</pre>
+        <button class="copy-btn" onclick="copyCommand('cmd3')">Copy</button>
+      </div>
+    </div>
+
+    <!-- Command 4: Add Files to Staging -->
+    <div id="command4">
+      <h2>4. Add Files to Staging</h2>
+      <p>Stage the changes made to files before committing them. This tells Git that these files should be included in the next commit.</p>
+      <div class="command-container">
+        <pre class="command" id="cmd4">git add filename</pre>
+        <button class="copy-btn" onclick="copyCommand('cmd4')">Copy</button>
+      </div>
+    </div>
+
+    <!-- Command 5: Commit Changes -->
+    <div id="command5">
+      <h2>5. Commit Changes</h2>
+      <p>Commit the staged changes to the local repository with a descriptive message about the changes made.</p>
+      <div class="command-container">
+        <pre class="command" id="cmd5">git commit -m "Commit message"</pre>
+        <button class="copy-btn" onclick="copyCommand('cmd5')">Copy</button>
+      </div>
+    </div>
+
+    <!-- Continue with other commands similarly... -->
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

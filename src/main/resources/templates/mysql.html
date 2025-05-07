@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MySQL Introduction - EduTrack</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 240px;
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      color: white;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #495057;
+      padding-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ced4da;
+      text-decoration: none;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #495057;
+      color: white;
+    }
+
+    /* Content Styling */
+    .content {
+      margin-left: 260px;
+      padding: 30px;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #212529;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #212529;
+      margin: 20px 0 10px 0;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    p, ul, ol {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #495057;
+    }
+
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    ul li, ol li {
+      margin-bottom: 8px;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #dee2e6;
+    }
+
+    table th {
+      background-color: #f8f9fa;
+      color: #495057;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    /* Button for Next Topic */
+    .next-topic {
+      margin-top: 40px;
+    }
+
+    .next-topic a {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .next-topic a:hover {
+      background-color: #218838;
+    }
+
+    /* Media Queries for Smaller Screens */
+    @media (max-width: 768px) {
+      .content {
+        margin-left: 0;
+      }
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>MySQL Topics</h2>
+      <ul>
+        <li><a href="#">Introduction</a></li>
+        <li><a href="#">Installation</a></li>
+        <li><a href="#">Database and Tables</a></li>
+        <li><a href="#">SQL Queries</a></li>
+        <li><a href="#">Constraints</a></li>
+        <li><a href="#">Joins</a></li>
+        <li><a href="#">Functions</a></li>
+        <li><a href="#">Backup & Restore</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Introduction to MySQL</h1>
+      <p><strong>MySQL</strong> is a powerful, open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) to manage, access, and manipulate data. Originally developed by MySQL AB and now maintained by Oracle Corporation, it is one of the most popular databases in the world due to its performance, scalability, and ease of use.</p>
+
+      <h2>Understanding Relational Databases</h2>
+      <p>MySQL operates based on the relational model, where data is stored in tables consisting of rows and columns. Each table has a unique name and consists of records (rows) and fields (columns). These tables can be related to each other using keys, especially primary keys and foreign keys, allowing for organized, consistent data management. This makes relational databases highly structured and ideal for complex queries and large datasets.</p>
+
+      <h2>Brief History of MySQL</h2>
+      <p>MySQL was created in 1995 by a Swedish company, MySQL AB, co-founded by Michael Widenius. The name "MySQL" combines "My" (Michael's daughter’s name) and SQL. It quickly gained popularity due to its reliability and open-source nature. In 2008, Sun Microsystems acquired MySQL AB, and in 2010, Oracle acquired Sun Microsystems, thus taking over the development of MySQL.</p>
+
+      <h2>Advantages of Using MySQL</h2>
+      <ul>
+        <li><strong>Free and Open Source:</strong> Distributed under the GNU General Public License (GPL), making it accessible to everyone.</li>
+        <li><strong>Cross-Platform Support:</strong> Runs on various platforms including Windows, Linux, macOS, and more.</li>
+        <li><strong>High Performance:</strong> Optimized for speed and efficient data handling, especially for read-heavy applications.</li>
+        <li><strong>Secure:</strong> Offers features like access privilege control, user authentication, and encryption for data security.</li>
+        <li><strong>Scalability:</strong> Capable of handling small to extremely large databases with millions of records.</li>
+        <li><strong>Wide Language Support:</strong> Easily integrates with programming languages such as PHP, Java, Python, and C++.</li>
+        <li><strong>Strong Community:</strong> A vast global user base provides rich documentation, tutorials, and third-party tools.</li>
+      </ul>
+
+      <h2>Key Features of MySQL</h2>
+      <ol>
+        <li><strong>ACID Compliance:</strong> Ensures reliable transactions with Atomicity, Consistency, Isolation, and Durability.</li>
+        <li><strong>Storage Engines:</strong> Offers multiple storage engines such as InnoDB (default, transaction-safe) and MyISAM (faster for read-only).</li>
+        <li><strong>SQL Support:</strong> Fully supports standard SQL syntax, allowing for complex queries and data manipulation.</li>
+        <li><strong>Data Replication:</strong> Enables copying data across databases for load balancing, backup, and disaster recovery.</li>
+        <li><strong>Partitioning:</strong> Divides large tables into smaller, more manageable pieces for improved performance.</li>
+        <li><strong>Stored Procedures and Triggers:</strong> Automates tasks and enforces rules directly within the database system.</li>
+        <li><strong>View and Index Support:</strong> Allows for virtual tables and fast query access using indexing mechanisms.</li>
+        <li><strong>Unicode Support:</strong> Provides full Unicode support, making it suitable for global applications.</li>
+      </ol>
+
+      <h2>Common Use Cases</h2>
+      <ul>
+        <li><strong>Content Management Systems (CMS):</strong> Platforms like WordPress, Joomla, and Drupal rely on MySQL.</li>
+        <li><strong>eCommerce Platforms:</strong> Online shops like Magento and OpenCart store product, order, and user data in MySQL databases.</li>
+        <li><strong>Data Analytics:</strong> MySQL is used for storing and retrieving structured data in business intelligence tools.</li>
+        <li><strong>Web Applications:</strong> MySQL powers dynamic websites by integrating with server-side languages like PHP.</li>
+        <li><strong>Enterprise Software:</strong> Used in ERPs, CRMs, and other business-critical systems for data consistency and access control.</li>
+      </ul>
+
+      <h2>MySQL vs Other Databases</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>MySQL</th>
+            <th>PostgreSQL</th>
+            <th>Oracle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>License</td>
+            <td>Open Source (GPL)</td>
+            <td>Open Source (PostgreSQL License)</td>
+            <td>Commercial</td>
+          </tr>
+          <tr>
+            <td>Performance</td>
+            <td>High (read-heavy)</td>
+            <td>Moderate to High</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Use Case</td>
+            <td>Web Applications</td>
+            <td>Complex Queries</td>
+            <td>Enterprise Applications</td>
+          </tr>
+          <tr>
+            <td>ACID Compliance</td>
+            <td>Yes (with InnoDB)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Language Support</td>
+            <td>PHP, Python, Java</td>
+            <td>Python, Java, C</td>
+            <td>Java, PL/SQL</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Who Uses MySQL?</h2>
+      <ul>
+        <li><strong>Facebook:</strong> Uses MySQL to manage massive amounts of user data across the platform.</li>
+        <li><strong>Google:</strong> Implements MySQL in internal tools and infrastructure management.</li>
+        <li><strong>Twitter:</strong> Relied on MySQL in its early days to store timelines and tweets.</li>
+        <li><strong>GitHub:</strong> Stores metadata and version control info in MySQL databases.</li>
+        <li><strong>Netflix:</strong> Uses MySQL for managing large-scale, high-volume transactional systems.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>MySQL stands out as a reliable, scalable, and efficient RDBMS, making it a top choice for developers and enterprises around the globe. Its open-source nature, coupled with powerful features like ACID compliance, replication, and performance optimization, makes it suitable for projects of all sizes—from personal blogs to global services. Whether you're just starting with databases or developing complex data-driven apps, MySQL is a solid foundation to build upon.</p>
+
+      <div class="next-topic">
+        <a href="mysql_installation.html">👉 Next: MySQL Installation</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="" />
+  <title>HTML Course - EduTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      background-color: #004080;
+      min-height: 100vh;
+      color: white;
+      padding: 20px;
+    }
+    .sidebar h4 {
+      color: #ffcc00;
+    }
+    .sidebar a {
+      color: white;
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .sidebar a:hover {
+      color: #ffcc00;
+    }
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h4 class="mb-4">HTML Topics</h4>
+        <a onclick="showTopic('intro')">HTML Introduction</a>
+        <a onclick="showTopic('structure')">HTML Structure</a>
+        <a onclick="showTopic('text-elements')">HTML Text Elements</a>
+        <a onclick="showTopic('links')">HTML Links</a>
+        <a onclick="showTopic('images')">HTML Images</a>
+        <a onclick="showTopic('forms')">HTML Forms</a>
+        <a onclick="showTopic('tables')">HTML Tables</a>
+        <a onclick="showTopic('semantic')">HTML Semantic Elements</a>
+        <a onclick="showTopic('html5')">HTML5 New Features</a>
+      </div>
+
+      <!-- Course Content -->
+      <div class="col-md-9 p-5">
+  <!-- HTML Introduction -->
+  <div id="intro" class="content-section active">
+    <h2>HTML Introduction</h2>
+    <p>HTML stands for <strong>HyperText Markup Language</strong>. It is the standard language used to create and design web pages. HTML provides the structure and layout of a web page by defining different elements like headings, paragraphs, links, images, and other content.</p>
+    
+    <h4>The Role of HTML</h4>
+    <p>HTML plays a crucial role in web development. It allows developers to structure the content of a webpage and display it in a web browser. Every webpage you visit is created using HTML, and it is one of the most important building blocks of the web.</p>
+
+    <!-- Adding an Image -->
+    <div class="my-4">
+      <img src="https://via.placeholder.com/800x400?text=HTML+Introduction" alt="HTML Introduction" class="img-fluid rounded">
+    </div>
+
+    <h4>HTML Elements and Tags</h4>
+    <p>HTML is composed of <strong>elements</strong>. An element generally consists of an opening tag, content, and a closing tag. Here’s an example of an HTML paragraph:</p>
+    <pre>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</pre>
+    <p>The <code>&lt;p&gt;</code> tag is the opening tag, and <code>&lt;/p&gt;</code> is the closing tag. The content between the tags is what gets displayed on the web page.</p>
+
+    <h4>HTML Syntax</h4>
+    <p>HTML documents follow a very simple syntax. Here's a basic example of an HTML document:</p>
+    <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My First Webpage&lt;/h1&gt;
+    &lt;p&gt;This is an introductory HTML page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>This structure begins with the <code>&lt;html&gt;</code> element and is followed by the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections. The <code>&lt;head&gt;</code> contains metadata such as the title, and the <code>&lt;body&gt;</code> contains the content that is visible to the user.</p>
+
+    <h4>HTML Tags and Attributes</h4>
+    <p>HTML elements are defined using <strong>tags</strong>. Tags usually come in pairs: an opening tag and a closing tag. Tags can also contain <strong>attributes</strong> that provide additional information about an element. For example:</p>
+    <pre>&lt;img src="image.jpg" alt="An example image"&gt;</pre>
+    <p>The <code>&lt;img&gt;</code> tag is used to embed an image in a webpage. The <code>src</code> attribute defines the image source, and the <code>alt</code> attribute provides a description for accessibility purposes.</p>
+
+    <h4>HTML Structure</h4>
+    <p>Every HTML document has a structure that is important for the browser to interpret it correctly. The basic structure includes:</p>
+    <ul>
+      <li><code>&lt;!DOCTYPE html&gt;</code> declaration to specify HTML5.</li>
+      <li><code>&lt;html&gt;</code> as the root element.</li>
+      <li><code>&lt;head&gt;</code> section for metadata and linking external files.</li>
+      <li><code>&lt;body&gt;</code> section where visible content is placed.</li>
+    </ul>
+
+    <h4>Conclusion</h4>
+    <p>HTML is essential for building the web. It defines the content structure and lays the foundation for all web pages. The next step is learning how to structure your web page with proper elements, and soon you will be able to create complete web pages from scratch.</p>
+  </div>
+
+
+
+      <div id="structure" class="content-section">
+  <h2>HTML Structure</h2>
+  <p>HTML documents follow a very specific structure that helps browsers render the content correctly. Understanding this structure is essential for anyone looking to build web pages. Below, we will dive deep into the components of an HTML document and how they work together.</p>
+
+  <h4>1. <!DOCTYPE html></h4>
+  <p>Every HTML document begins with the <code>&lt;!DOCTYPE html&gt;</code> declaration. This declaration is used to specify the document type and version of HTML that the browser should use. In modern web development, this is always set to <code>html</code> for HTML5 documents. It tells the browser that this document is written in HTML5, which comes with new features and improvements over older versions of HTML.</p>
+  
+  <pre>&lt;!DOCTYPE html&gt;</pre>
+
+  <h4>2. &lt;html&gt; Element</h4>
+  <p>The <code>&lt;html&gt;</code> element is the root element of an HTML document. Everything inside the <code>&lt;html&gt;</code> tag is part of the HTML document. The <code>&lt;html&gt;</code> tag is also where you can define the language of the document using the <code>lang</code> attribute. This is helpful for accessibility and search engine optimization (SEO).</p>
+
+  <pre>&lt;html lang="en"&gt;</pre>
+
+  <h4>3. &lt;head&gt; Section</h4>
+  <p>The <code>&lt;head&gt;</code> section contains meta-information about the HTML document. This includes the document title, links to stylesheets, and scripts. The <code>&lt;head&gt;</code> tag does not contain visible content on the page, but it’s critical for defining how the document behaves, looks, and is interpreted.</p>
+
+  <h5>Inside the <code>&lt;head&gt;</code>:</h5>
+  <ul>
+    <li><strong>&lt;title&gt;</strong>: Specifies the title of the document, which appears in the browser tab or window.</li>
+    <li><strong>&lt;meta&gt;</strong>: Defines metadata such as the character set, author, or viewport settings for mobile devices.</li>
+    <li><strong>&lt;link&gt;</strong>: Links to external stylesheets (CSS files).</li>
+    <li><strong>&lt;script&gt;</strong>: Includes JavaScript files or inline scripts.</li>
+  </ul>
+
+  <pre>
+&lt;head&gt;
+  &lt;title&gt;My Webpage&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+  </pre>
+
+  <h4>4. &lt;body&gt; Section</h4>
+  <p>The <code>&lt;body&gt;</code> section contains the visible content of the web page. This is where you place all the elements that the user will interact with, such as headings, paragraphs, images, links, and other HTML components.</p>
+
+  <h5>Basic Body Structure:</h5>
+  <pre>
+&lt;body&gt;
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;p&gt;This is my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+  </pre>
+
+  <h4>5. Commonly Used HTML Tags in Body</h4>
+  <p>Within the <code>&lt;body&gt;</code> section, you will use several common HTML tags to create the layout and content of your page. Here are a few examples:</p>
+
+  <ul>
+    <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong>: These are heading tags, with <code>&lt;h1&gt;</code> being the most important (largest), and <code>&lt;h6&gt;</code> being the least important (smallest).</li>
+    <li><strong>&lt;p&gt;</strong>: The paragraph tag, used to define text paragraphs.</li>
+    <li><strong>&lt;a&gt;</strong>: The anchor tag, used to create hyperlinks.</li>
+    <li><strong>&lt;img&gt;</strong>: The image tag, used to embed images on the page.</li>
+    <li><strong>&lt;ul&gt;</strong>, <strong>&lt;ol&gt;</strong>, <strong>&lt;li&gt;</strong>: These tags are used for creating unordered or ordered lists.</li>
+  </ul>
+
+  <h4>6. Closing Tags</h4>
+  <p>HTML tags generally come in pairs: an opening tag and a closing tag. The closing tag is similar to the opening tag, but it has a forward slash (<code>/</code>) before the tag name. For example:</p>
+  
+  <pre>
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+  </pre>
+
+  <p>The opening tag is <code>&lt;h1&gt;</code>, and the closing tag is <code>&lt;/h1&gt;</code>.</p>
+
+  <h4>7. Nesting HTML Elements</h4>
+  <p>HTML elements can be nested inside one another. This allows you to create complex page structures. For example, a list of items can be nested inside an unordered list (<code>&lt;ul&gt;</code>), which itself is inside a <code>&lt;div&gt;</code> container.</p>
+
+  <pre>
+&lt;div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+  </pre>
+
+  <h4>8. HTML Comments</h4>
+  <p>HTML allows you to add comments in the code. These comments are not displayed in the browser but are useful for developers to leave notes or explanations. Comments are written within <code>&lt;!--</code> and <code>--&gt;</code>.</p>
+
+  <pre>
+&lt;!-- This is a comment --&gt;
+  </pre>
+
+  <h4>Conclusion</h4>
+  <p>The structure of an HTML document is straightforward but very important. By using the correct tags and following a well-organized structure, you ensure that your web pages are functional, accessible, and easy to maintain. As you continue learning HTML, you'll become more familiar with how to use these elements effectively to create well-structured and efficient web pages.</p>
+</div>
+
+
+        <!-- HTML Text Elements -->
+        <div id="text-elements" class="content-section">
+          <h2>HTML Text Elements</h2>
+          <p>HTML provides a variety of elements to format text and add meaning to it...</p>
+          <h4>Paragraphs and Headings</h4>
+          <p>Text in HTML can be formatted using heading tags such as <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and <code>&lt;p&gt;</code>...</p>
+          <pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+          </pre>
+          <p>Headings are used to define titles or sections, while paragraphs are used for the main body text.</p>
+
+          <h4>Formatting Text</h4>
+          <p>Text can be formatted using <code>&lt;b&gt;</code> for bold, <code>&lt;i&gt;</code> for italic, and <code>&lt;u&gt;</code> for underlined...</p>
+
+          <h4>Lists</h4>
+          <p>HTML supports both ordered and unordered lists...</p>
+          <pre>
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+          </pre>
+          <p>Using the <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> tags, you can create lists of items either numbered or bulleted.</p>
+
+          <h4>Text Alignment</h4>
+          <p>Text alignment is controlled using the <code>&lt;div&gt;</code> tag or inline CSS...</p>
+        </div>
+
+        <!-- HTML Links -->
+        <div id="links" class="content-section">
+          <h2>HTML Links</h2>
+          <p>Links in HTML are created using the <code>&lt;a&gt;</code> tag. The <code>href</code> attribute specifies the URL...</p>
+          <pre>
+&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+          </pre>
+          <p>Links can also be used to link to sections within the same page using IDs...</p>
+        </div>
+
+        <!-- HTML Images -->
+        <div id="images" class="content-section">
+          <h2>HTML Images</h2>
+          <p>Images in HTML are included using the <code>&lt;img&gt;</code> tag. The <code>src</code> attribute defines the path to the image file...</p>
+          <pre>
+&lt;img src="image.jpg" alt="Description"&gt;
+          </pre>
+          <p>Always use the <code>alt</code> attribute to provide text descriptions for images to improve accessibility.</p>
+        </div>
+
+        <!-- HTML Forms -->
+        <div id="forms" class="content-section">
+          <h2>HTML Forms</h2>
+          <p>Forms are used to collect user input. The <code>&lt;form&gt;</code> element wraps all form elements...</p>
+          <pre>
+&lt;form action="/submit" method="POST"&gt;
+  &lt;input type="text" name="username"&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+          </pre>
+          <p>Forms can include input fields, radio buttons, checkboxes, and more...</p>
+        </div>
+
+        <!-- HTML Tables -->
+        <div id="tables" class="content-section">
+          <h2>HTML Tables</h2>
+          <p>Tables in HTML are created using the <code>&lt;table&gt;</code> tag. Rows are defined by <code>&lt;tr&gt;</code>, and columns by <code>&lt;td&gt;</code>...</p>
+          <pre>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Cell 1&lt;/td&gt;
+    &lt;td&gt;Cell 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+          </pre>
+        </div>
+
+        <!-- HTML Semantic Elements -->
+        <div id="semantic" class="content-section">
+          <h2>HTML Semantic Elements</h2>
+          <p>HTML5 introduced semantic elements like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, and <code>&lt;article&gt;</code>...</p>
+          <pre>
+&lt;header&gt;
+  &lt;nav&gt;Navigation links here&lt;/nav&gt;
+&lt;/header&gt;
+&lt;footer&gt;
+  &lt;p&gt;Footer content&lt;/p&gt;
+&lt;/footer&gt;
+          </pre>
+        </div>
+
+        <!-- HTML5 New Features -->
+        <div id="html5" class="content-section">
+          <h2>HTML5 New Features</h2>
+          <p>HTML5 brought several new features like native video and audio support, <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>...</p>
+          <pre>
+&lt;video controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script for Switching Topics -->
+  <script>
+    function showTopic(topicId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(topicId).classList.add('active');
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

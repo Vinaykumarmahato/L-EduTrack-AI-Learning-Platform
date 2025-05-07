@@ -49,4 +49,31 @@ public class UserController {
     public String getCourses() {
     	return "Courses";
     }
+    
+    
+    //courses  controller in this section for selling the course
+    @GetMapping("/courses/html")
+    public  String getHtml() {
+    	return "html";
+    }
+    
+    @GetMapping("/courses/java")
+    public String openJava() {
+    	return "java";
+    }
+    
+    @GetMapping("/courses/mysql")
+    public String openMysql() {
+    	return "mysql";
+    }
+    
+    @GetMapping("/course/jdbc")
+    public String openJdbc() {
+    	return"jdbc";
+    }
+    
+    @GetMapping("/courses/command")
+    public String openGitBase() {
+    	return "command";
+    }
 }
